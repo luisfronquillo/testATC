@@ -29,24 +29,24 @@ import org.xml.sax.SAXException;
  * @author luis.f.ronquillo
  */
 public class TestXml {
-    
+
     private static final String TEMPLATE_PRUEBA = "TemplatePrueba2.vm";
 
     public static void main(String[] args) {
-        
+
         //mapa de valores para la plantilla
         Map<String, String> values = new HashMap<String, String>();
         values.put("props1", "value 1");
         values.put("props2", "value 2");
-        
+
         //Clase configuracion velocity
         confVelocity conf = new confVelocity();
-        
-        // Devuelve en string el template con los valores 
+
+        // Devuelve en string el template con los valores
         String xml = conf.templateTostring(TEMPLATE_PRUEBA, values);
-        
-        
-        //Se busca un nodo o path dentro del xml. La ruta sigue una forma jerarquica segun los nodos presentes en el xml. 
+
+
+        //Se busca un nodo o path dentro del xml. La ruta sigue una forma jerarquica segun los nodos presentes en el xml.
         findNodeforPath(xml, "/Ticket_RetrieveListOfTSMReply/detailsOfRetrievedTSMs/tattooAndTypeOfTSM/uniqueReference");
     }
     public static void findNodeforPath(String xml, String path) {
@@ -54,13 +54,13 @@ public class TestXml {
             //Se realiza un marshall del XML
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();
-            ByteArrayInputStream bais = new ByteArrayInputStream(xml.getBytes());
+            ByteArrayInputStream bais = new ByteArrayInputStream(xml.getBytes("UTF-8"));
             Document dom = db.parse(bais);
 
             //Se compila la ruta a buscar
             XPath xpath = XPathFactory.newInstance().newXPath();
             XPathExpression nodeExpr = (XPathExpression) xpath.compile(path);
-            
+
             //Extrae los valores de dicha ruta, tener en cuenta que la ruta puede aparecer varias veces por eso el NodeList
             NodeList nodelist = (NodeList) nodeExpr.evaluate(dom, XPathConstants.NODESET);
 
