@@ -1,0 +1,37 @@
+## Velocity Template.
+<Ticket_RetrieveListOfTSMReply>
+  <detailsOfRetrievedTSMs xmlns="http://xml.amadeus.com/TTSLRR_09_1_1A">
+    <tattooAndTypeOfTSM>
+      <uniqueReference>$props1</uniqueReference>
+    </tattooAndTypeOfTSM>
+    <property>
+      <name>Property2</name>
+    </property>
+    <property>
+      <name>Property3</name>
+    </property>
+    <property>
+      <name>Property4</name>
+    </property>
+    <property>
+      <name>Property5</name>
+    </property>
+  </detailsOfRetrievedTSMs>
+  <detailsOfRetrievedTSMs xmlns="http://xml.amadeus.com/TTSLRR_09_1_1A">
+    <tattooAndTypeOfTSM>
+      <uniqueReference>$props2</uniqueReference>
+    </tattooAndTypeOfTSM>
+    <property>
+      <name>Property2</name>
+    </property>
+    <property>
+      <name>Property3</name>
+    </property>
+    <property>
+      <name>Property4</name>
+    </property>
+    <property>
+      <name>Property5</name>
+    </property>
+  </detailsOfRetrievedTSMs>
+</Ticket_RetrieveListOfTSMReply>

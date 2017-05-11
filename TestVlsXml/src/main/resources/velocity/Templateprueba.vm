@@ -1,0 +1,9 @@
+## Velocity Template.
+<root>
+    <node1>A</node1>
+    <node2>B</node2>
+    <node3>
+        <child1>C</child1>
+        <child2>D</child2>
+    </node3>
+</root>
